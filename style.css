@@ -174,3 +174,60 @@ footer{
     line-height:2;
     font-size:18px;
 }
+/* للجوالات والعرض أقل من 768px */
+@media (max-width: 768px) {
+
+    /* الهيدر: nav يترتب عمودي */
+    .navbar nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* الشعار والاسم أصغر ومحاذاة صحيحة */
+    .brand {
+        gap: 8px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    /* بطاقات الخدمات تصير عمودية */
+    .cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* إطار الـ iPhone يقل شوي */
+    .iphone-frame {
+        padding: 15px;
+    }
+
+    /* النصوص أصغر */
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* الفورم Inputs و Textarea أكبر بعرض 100% */
+    .order-form input,
+    .order-form textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .order-form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
