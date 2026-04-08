@@ -1,0 +1,217 @@
+/* ==========================
+   Reset وخصائص عامة
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+/* ==========================
+   الهيدر
+========================== */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+.btn-nav {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* ==========================
+   Hero و iPhone Frame
+========================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+}
+
+.iphone-frame {
+    width: 90%;
+    max-width: 420px;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 60px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeUp 1s ease;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 30px;
+    background: black;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+/* ==========================
+   الأقسام والبطاقات
+========================== */
+.section {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* ثابت أفقي دائمًا */
+    margin-top: 40px;
+    overflow-x: auto; /* يسمح بالتمرير أفقي على الجوال */
+    padding-bottom: 10px;
+}
+
+.card {
+    min-width: 250px; /* أصغر حجم للبطاقة على الجوال */
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: 0.3s;
+    text-align: center;
+    flex-shrink: 0; /* يمنع البطاقة من الانكماش */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.dark {
+    background: black;
+    color: white;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+}
+
+/* ==========================
+   Animation
+========================== */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   فورم الطلب
+========================== */
+.order-form {
+    display: flex;
+    flex-direction: row; /* أفقي دائمًا */
+    gap: 15px;
+    flex-wrap: nowrap;
+}
+
+.order-form input,
+.order-form textarea {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+.order-form textarea {
+    height: 120px;
+}
+
+.order-form button {
+    padding: 16px 20px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.order-form button:hover {
+    opacity: 0.85;
+}
+
+/* ==========================
+   Media Queries لتصغير الشاشات فقط لتكبير الخطوط ولا تغير الهيكل
+========================== */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .order-form input,
+    .order-form textarea,
+    .order-form button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .card {
+        min-width: 200px;
+        padding: 20px;
+    }
+}
