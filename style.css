@@ -17,6 +17,7 @@ body {
 /* ==========================
    الهيدر
 ========================== */
+/* الهيدر أفقي ثابت */
 .navbar {
     position: fixed;
     width: 100%;
@@ -25,33 +26,43 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 15px 20px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     z-index: 1000;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* يمنع الانقسام للعمودي */
+    overflow-x: auto;  /* يسمح بالتمرير الأفقي لو العناصر كثيرة */
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px; /* المسافة بين الشعار والاسم */
+    flex-shrink: 0; /* يمنع تقلص الاسم والشعار */
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
 .brand-name {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 22px;
+    white-space: nowrap; /* الاسم لا ينكسر لسطر ثاني */
+}
+
+nav {
+    display: flex;
+    flex-direction: row; /* افقي دائمًا */
+    gap: 15px;
+    align-items: center;
+    flex-shrink: 0; /* يمنع تقلص الروابط */
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    margin-left: 20px;
+    white-space: nowrap; /* يمنع تكسير النص */
     transition: 0.3s;
 }
 
@@ -62,8 +73,10 @@ nav a:hover {
 .btn-nav {
     background: black;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 /* ==========================
