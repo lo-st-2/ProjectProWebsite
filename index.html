@@ -14,7 +14,14 @@
        <span class="brand-name">ProjectPro</span>
     </div>
 
-    <nav>
+    <!-- زر الهامبرغر -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links" id="nav-links">
         <a href="index.html">الرئيسية</a>
         <a href="services.html">الخدمات</a>
         <a href="about.html">حول</a>
@@ -61,7 +68,7 @@
 </footer>
 
 <script>
-/* ===== Navbar إخفاء واظهار سلس على طريقة الآيفون ===== */
+// ===== Navbar إخفاء/إظهار عند النزول =====
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 const navbarHeight = navbar.offsetHeight;
@@ -70,15 +77,21 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
     if(currentScroll > lastScroll && currentScroll > navbarHeight){
-        // النزول → أخفي الشريط بسلاسة
         navbar.style.top = `-${navbarHeight}px`;
         navbar.style.transition = 'top 0.4s ease';
     } else {
-        // الصعود → أظهر الشريط
         navbar.style.top = '0';
         navbar.style.transition = 'top 0.4s ease';
     }
     lastScroll = currentScroll;
+});
+
+// ===== Toggle Hamburger Menu =====
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
 </script>
 
