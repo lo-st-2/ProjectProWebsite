@@ -43,30 +43,6 @@ body {
     white-space: nowrap;
 }
 
-nav {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    white-space: nowrap;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    opacity: 0.6;
-}
-
-.btn-nav {
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -83,9 +59,47 @@ nav a:hover {
     border-radius: 2px;
 }
 
-/* ==========================
-   Hero و iPhone Frame
-========================== */
+/* الروابط الرئيسية مخفية دائمًا وتفتح على كل الشاشات */
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding-top: 80px;
+    gap: 30px;
+    display: flex;
+    transition: right 0.4s ease;
+    z-index: 999;
+}
+
+nav.active {
+    right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+.btn-nav {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Hero */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -165,24 +179,16 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
+    .hamburger {
+        display: flex;
+    }
+
     nav {
-        position: fixed;
-        top: 0;
         right: -100%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        padding-top: 80px;
-        gap: 30px;
-        transition: right 0.4s ease;
     }
 
     nav.active {
         right: 0;
-    }
-
-    .hamburger {
-        display: flex;
     }
 }
