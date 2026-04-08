@@ -15,7 +15,7 @@ body {
 }
 
 /* ==========================
-   الهيدر
+   Navbar الشريط
 ========================== */
 .navbar {
     position: fixed;
@@ -30,7 +30,6 @@ body {
     z-index: 1000;
     flex-wrap: nowrap;
     overflow-x: auto;
-    transition: top 0.3s;
 }
 
 .brand {
@@ -127,10 +126,10 @@ nav a:hover {
 
 .cards {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* تبدأ من اليسار */
     gap: 20px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: nowrap; /* تبقى أفقية دائمًا */
+    overflow-x: auto;  /* تمرير أفقي إذا ضاقت الشاشة */
     padding-bottom: 10px;
 }
 
@@ -227,5 +226,15 @@ footer {
     .card {
         min-width: 200px;
         padding: 20px;
+    }
+
+    /* اجعل كل شيء أفقي دائمًا */
+    .cards {
+        justify-content: flex-start;
+    }
+
+    .order-form {
+        flex-direction: row;
+        overflow-x: auto;
     }
 }

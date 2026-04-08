@@ -60,22 +60,25 @@
   <a href="contact.html">التواصل</a>
 </footer>
 
-<!-- ====================
-     JavaScript لإخفاء الهيدر عند النزول
-==================== -->
 <script>
+/* ===== Navbar إخفاء واظهار سلس على طريقة الآيفون ===== */
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 const navbarHeight = navbar.offsetHeight;
 
 window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  if(currentScroll > lastScroll && currentScroll > navbarHeight){
-    navbar.style.top = `-${navbarHeight}px`; // أخفي الهيدر عند النزول
-  } else {
-    navbar.style.top = '0'; // أظهره عند الصعود
-  }
-  lastScroll = currentScroll;
+    const currentScroll = window.pageYOffset;
+
+    if(currentScroll > lastScroll && currentScroll > navbarHeight){
+        // النزول → أخفي الشريط بسلاسة
+        navbar.style.top = `-${navbarHeight}px`;
+        navbar.style.transition = 'top 0.4s ease';
+    } else {
+        // الصعود → أظهر الشريط
+        navbar.style.top = '0';
+        navbar.style.transition = 'top 0.4s ease';
+    }
+    lastScroll = currentScroll;
 });
 </script>
 
