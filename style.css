@@ -25,9 +25,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 15px 40px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .brand {
@@ -114,14 +115,13 @@ nav a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: nowrap; /* ثابت أفقي دائمًا */
-    margin-top: 40px;
-    overflow-x: auto; /* يسمح بالتمرير أفقي على الجوال */
+    flex-wrap: nowrap; /* أفقي دائمًا */
+    overflow-x: auto;  /* يسمح بالتمرير أفقي على الجوال */
     padding-bottom: 10px;
 }
 
 .card {
-    min-width: 250px; /* أصغر حجم للبطاقة على الجوال */
+    min-width: 250px; /* أقل عرض للبطاقة */
     padding: 30px;
     border: 1px solid black;
     border-radius: 20px;
@@ -160,6 +160,7 @@ footer {
     flex-direction: row; /* أفقي دائمًا */
     gap: 15px;
     flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .order-form input,
@@ -191,10 +192,9 @@ footer {
 }
 
 /* ==========================
-   Media Queries لتصغير الشاشات فقط لتكبير الخطوط ولا تغير الهيكل
+   Media Queries لتكبير النصوص على الشاشات الصغيرة فقط
 ========================== */
 @media (max-width: 768px) {
-
     .hero h1 {
         font-size: 28px;
     }
