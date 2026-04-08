@@ -27,15 +27,18 @@ body{
 .brand{
     display:flex;
     align-items:center;
-    gap:12px;
-    font-size:28px;
-    font-weight:bold;
+    gap:12px;        /* المسافة بين الشعار والاسم */
 }
 
 .logo{
-    width:45px;
-    height:45px;
+    width:50px;       /* حجم الشعار */
+    height:50px;
     object-fit:contain;
+}
+
+.brand-name{
+    font-size:28px;
+    font-weight:bold;
 }
 
 nav a{
