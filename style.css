@@ -75,8 +75,9 @@ nav a:hover {
     color: white;
     padding: 8px 16px;
     border-radius: 10px;
-    white-space: nowrap;
+    white-space: nowrap;   /* يمنع النص من الانكسار */
     flex-shrink: 0;
+    font-size: 14px;       /* تصغير الخط لو يحتاج */
 }
 
 /* ==========================
