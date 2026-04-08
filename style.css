@@ -1,0 +1,233 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#fff;
+    color:#000;
+}
+
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;        /* المسافة بين الشعار والاسم */
+}
+
+.logo{
+    width:50px;       /* حجم الشعار */
+    height:50px;
+    object-fit:contain;
+}
+
+.brand-name{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    opacity:0.6;
+}
+
+.btn-nav{
+    background:black;
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 20px 60px;
+}
+
+.iphone-frame{
+    width:420px;
+    border:2px solid black;
+    border-radius:40px;
+    padding:60px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:black;
+    color:white;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:12px;
+}
+
+.section{
+    padding:100px 60px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.card{
+    width:300px;
+    padding:40px;
+    border:1px solid black;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.dark{
+    background:black;
+    color:white;
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.order-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:30px;
+}
+
+.order-form input,
+.order-form textarea{
+    width:100%;
+    padding:16px;
+    border:1px solid black;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+.order-form button{
+    background:black;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.order-form button:hover{
+    opacity:0.85;
+}
+.contact-box{
+    margin-top:30px;
+    text-align:right;
+    line-height:2;
+    font-size:18px;
+}
+/* للجوالات والعرض أقل من 768px */
+@media (max-width: 768px) {
+
+    /* الهيدر: nav يترتب عمودي */
+    .navbar nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* الشعار والاسم أصغر ومحاذاة صحيحة */
+    .brand {
+        gap: 8px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    /* بطاقات الخدمات تصير عمودية */
+    .cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* إطار الـ iPhone يقل شوي */
+    .iphone-frame {
+        padding: 15px;
+    }
+
+    /* النصوص أصغر */
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* الفورم Inputs و Textarea أكبر بعرض 100% */
+    .order-form input,
+    .order-form textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .order-form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
