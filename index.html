@@ -11,7 +11,7 @@
 <header class="navbar">
     <div class="brand">
        <img src="./assets/logo.png" class="logo" alt="ProjectPro Logo">
-        <span class="brand-name">ProjectPro</span>
+       <span class="brand-name">ProjectPro</span>
     </div>
 
     <nav>
@@ -27,7 +27,7 @@
   <div class="iphone-frame">
     <h1>نحوّل فكرتك إلى مشروع متكامل</h1>
     <p>برمجة • تصميم • تنفيذ مشاريع باحترافية</p>
-   <a href="services.html" class="hero-btn">ابدأ مشروعك</a>
+    <a href="services.html" class="hero-btn">ابدأ مشروعك</a>
   </div>
 </section>
 
@@ -60,21 +60,24 @@
   <a href="contact.html">التواصل</a>
 </footer>
 
+<!-- ====================
+     JavaScript لإخفاء الهيدر عند النزول
+==================== -->
 <script>
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
+const navbarHeight = navbar.offsetHeight;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  if (currentScroll > lastScroll) {
-    // النزول للأسفل → أخفي الشريط
-    navbar.style.top = '-80px';
+  if(currentScroll > lastScroll && currentScroll > navbarHeight){
+    navbar.style.top = `-${navbarHeight}px`; // أخفي الهيدر عند النزول
   } else {
-    // الصعود → أظهر الشريط
-    navbar.style.top = '0';
+    navbar.style.top = '0'; // أظهره عند الصعود
   }
   lastScroll = currentScroll;
 });
 </script>
+
 </body>
 </html>

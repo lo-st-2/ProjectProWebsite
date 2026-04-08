@@ -17,7 +17,6 @@ body {
 /* ==========================
    الهيدر
 ========================== */
-/* الهيدر أفقي ثابت */
 .navbar {
     position: fixed;
     width: 100%;
@@ -29,15 +28,16 @@ body {
     padding: 15px 20px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     z-index: 1000;
-    flex-wrap: nowrap; /* يمنع الانقسام للعمودي */
-    overflow-x: auto;  /* يسمح بالتمرير الأفقي لو العناصر كثيرة */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    transition: top 0.3s;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px; /* المسافة بين الشعار والاسم */
-    flex-shrink: 0; /* يمنع تقلص الاسم والشعار */
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -48,21 +48,21 @@ body {
 
 .brand-name {
     font-size: 22px;
-    white-space: nowrap; /* الاسم لا ينكسر لسطر ثاني */
+    white-space: nowrap;
 }
 
 nav {
     display: flex;
-    flex-direction: row; /* افقي دائمًا */
+    flex-direction: row;
     gap: 15px;
     align-items: center;
-    flex-shrink: 0; /* يمنع تقلص الروابط */
+    flex-shrink: 0;
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    white-space: nowrap; /* يمنع تكسير النص */
+    white-space: nowrap;
     transition: 0.3s;
 }
 
@@ -73,11 +73,11 @@ nav a:hover {
 .btn-nav {
     background: black;
     color: white;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 10px;
-    white-space: nowrap;   /* يمنع النص من الانكسار */
+    white-space: nowrap;
     flex-shrink: 0;
-    font-size: 14px;       /* تصغير الخط لو يحتاج */
+    font-size: 14px;
 }
 
 /* ==========================
@@ -129,19 +129,19 @@ nav a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: nowrap; /* أفقي دائمًا */
-    overflow-x: auto;  /* يسمح بالتمرير أفقي على الجوال */
+    flex-wrap: nowrap;
+    overflow-x: auto;
     padding-bottom: 10px;
 }
 
 .card {
-    min-width: 250px; /* أقل عرض للبطاقة */
+    min-width: 250px;
     padding: 30px;
     border: 1px solid black;
     border-radius: 20px;
     transition: 0.3s;
     text-align: center;
-    flex-shrink: 0; /* يمنع البطاقة من الانكماش */
+    flex-shrink: 0;
 }
 
 .card:hover {
@@ -171,7 +171,7 @@ footer {
 ========================== */
 .order-form {
     display: flex;
-    flex-direction: row; /* أفقي دائمًا */
+    flex-direction: row;
     gap: 15px;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -206,7 +206,7 @@ footer {
 }
 
 /* ==========================
-   Media Queries لتكبير النصوص على الشاشات الصغيرة فقط
+   Media Queries
 ========================== */
 @media (max-width: 768px) {
     .hero h1 {
