@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>طلب خدمة | ProjectPro</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">
+        <img src="./assets/logo.png" class="logo" alt="ProjectPro Logo">
+        <span class="brand-name">ProjectPro</span>
+    </div>
+
+    <a href="index.html" class="nav-icon back-btn">←</a>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">الخدمات</a>
+        <a href="about.html">حول</a>
+        <a href="contact.html">تواصل</a>
+        <a href="order.html" class="btn-nav">اطلب الآن</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="iphone-frame">
+        <h1>اطلب خدمتك الآن</h1>
+        <p>املأ البيانات وسنراجع طلبك مباشرة</p>
+
+        <form id="orderForm" action="https://formsubmit.co/projectpro.sa0@gmail.com" method="POST" class="order-form">
+
+            <!-- إرسال نسخة للعميل -->
+            <input type="hidden" name="_autoresponse" value="تم استلام طلبك بنجاح - ProjectPro">
+
+           <input type="hidden" name="_captcha" value="false">
+           
+            <!-- رقم الطلب -->
+            <input type="hidden" name="order_id" id="orderId">
+
+            <div class="form-group">
+                <input type="text" name="name" placeholder="اسم العميل" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="phone" placeholder="رقم الجوال" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" placeholder="البريد الإلكتروني (اختياري)">
+            </div>
+
+            <div class="form-group">
+                <textarea name="service" rows="5" placeholder="اكتب تفاصيل الخدمة المطلوبة" required></textarea>
+            </div>
+
+            <button type="submit">إرسال الطلب</button>
+        </form>
+    </div>
+</section>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+
+    e.preventDefault(); // نوقف الإرسال الافتراضي
+
+    const orderId = "PP-" + Math.floor(100000 + Math.random() * 900000);
+    document.getElementById("orderId").value = orderId;
+
+    const data = {
+        id: orderId,
+        name: document.querySelector('input[name="name"]').value,
+        phone: document.querySelector('input[name="phone"]').value,
+        email: document.querySelector('input[name="email"]').value,
+        service: document.querySelector('textarea[name="service"]').value
+    };
+
+    // حفظ البيانات
+    localStorage.setItem("orderData", JSON.stringify(data));
+
+    // إرسال الطلب
+    fetch(this.action, {
+        method: "POST",
+        body: new FormData(this)
+    }).then(() => {
+        // تحويل يدوي لصفحة الشكر
+        window.location.href = "https://lo-st-2.github.io/ProjectProWebsite/thanks.html";
+    });
+
+});
+</script>
+
+</body>
+</html>
