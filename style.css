@@ -234,3 +234,61 @@ footer {
         gap: 20px;
     }
 }
+/* تحسين الفراغات وجمال فورم الطلب */
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.order-form .form-group {
+    width: 100%;
+}
+
+.order-form input,
+.order-form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+    border-color: black;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.order-form button {
+    padding: 16px;
+    font-size: 17px;
+    border-radius: 15px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-form button:hover {
+    opacity: 0.85;
+}
+
+/* الهواتف الجوالة */
+@media (max-width: 768px) {
+    .order-form input,
+    .order-form textarea,
+    .order-form button {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+
+    .iphone-frame {
+        padding: 30px 20px;
+    }
+}
