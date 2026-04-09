@@ -1,0 +1,294 @@
+/* Reset وخصائص عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: black;
+    border-radius: 2px;
+}
+
+/* Nav slide-in */
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding-top: 80px;
+    gap: 30px;
+    display: flex;
+    transition: right 0.4s ease;
+    z-index: 999;
+}
+
+nav.active {
+    right: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+.btn-nav {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+}
+
+.iphone-frame {
+    width: 90%;
+    max-width: 420px;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 60px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeUp 1s ease;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 30px;
+    background: black;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+/* Cards */
+.section {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.card {
+    min-width: 250px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    transition: 0.3s;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.dark {
+    background: black;
+    color: white;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    /* الهامبرغر ظاهر على كل الشاشات الكبيرة والمتوسطة */
+    .hamburger {
+        display: flex;
+    }
+}
+/* تعديل صفحة الخدمات - كل ثنتين جنب بعض على الكمبيوتر، في الجوال كل ثنتين فوق بعض */
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding-top: 30px;
+}
+
+.services-cards .card {
+    min-width: 250px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    background: #fff;
+}
+
+.services-cards .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* نصوص وأزرار مشابهة لستايل iPhone */
+.hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: black;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    opacity: 0.85;
+}
+
+/* الجوال - كل بطاقة 100% واثنين فوق بعض */
+@media (max-width: 768px) {
+    .services-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+/* تحسين الفراغات وجمال فورم الطلب */
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.order-form .form-group {
+    width: 100%;
+}
+
+.order-form input,
+.order-form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+    border-color: black;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.order-form button {
+    padding: 16px;
+    font-size: 17px;
+    border-radius: 15px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-form button:hover {
+    opacity: 0.85;
+}
+
+/* الهواتف الجوالة */
+@media (max-width: 768px) {
+    .order-form input,
+    .order-form textarea,
+    .order-form button {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+
+    .iphone-frame {
+        padding: 30px 20px;
+    }
+}
