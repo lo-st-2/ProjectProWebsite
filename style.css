@@ -45,10 +45,11 @@ body {
 
 /* Hamburger Menu */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -59,7 +60,7 @@ body {
     border-radius: 2px;
 }
 
-/* الروابط الرئيسية مخفية دائمًا وتفتح على كل الشاشات */
+/* Nav slide-in */
 nav {
     position: fixed;
     top: 0;
@@ -180,15 +181,8 @@ footer {
 
 /* Media Queries */
 @media (max-width: 1200px) {
+    /* الهامبرغر ظاهر على كل الشاشات الكبيرة والمتوسطة */
     .hamburger {
         display: flex;
-    }
-
-    nav {
-        right: -100%;
-    }
-
-    nav.active {
-        right: 0;
     }
 }
