@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم إرسال الطلب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">
+        <img src="./assets/logo.png" class="logo">
+        <span class="brand-name">ProjectPro</span>
+    </div>
+
+    <a href="index.html" class="nav-icon back-btn">←</a>
+</header>
+
+<section class="hero">
+    <div class="iphone-frame thanks-box">
+        <h1>✅ تم استلام طلبك</h1>
+        <p>شكراً لك! سيتم التواصل معك قريباً</p>
+
+        <h3 id="orderNumber"></h3>
+
+        <div id="orderDetails" style="margin-top:20px;"></div>
+
+        <div class="thanks-buttons">
+            <a href="index.html" class="hero-btn">العودة للرئيسية</a>
+            <button onclick="toggleOrder()" class="hero-btn secondary-btn">عرض الطلب</button>
+        </div>
+    </div>
+</section>
+
+<script>
+const data = JSON.parse(localStorage.getItem("orderData"));
+
+if(data){
+    document.getElementById("orderNumber").innerText = "رقم طلبك: " + data.id;
+}
+
+let shown = false;
+
+function toggleOrder(){
+    const box = document.getElementById("orderDetails");
+
+    if(!shown && data){
+        box.innerHTML = `
+            <p><strong>الاسم:</strong> ${data.name}</p>
+            <p><strong>الجوال:</strong> ${data.phone}</p>
+            <p><strong>البريد:</strong> ${data.email || "-"}</p>
+            <p><strong>الخدمة:</strong> ${data.service}</p>
+        `;
+        shown = true;
+    } else {
+        box.innerHTML = "";
+        shown = false;
+    }
+}
+</script>
+
+</body>
+</html>
