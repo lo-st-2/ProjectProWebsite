@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">
+       <img src="./assets/logo.png" class="logo" alt="ProjectPro Logo">
+       <span class="brand-name">ProjectPro</span>
+    </div>
+
+    <!-- زر الهامبرغر -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">الخدمات</a>
+        <a href="about.html">حول</a>
+        <a href="contact.html">تواصل</a>
+        <a href="order.html" class="btn-nav">اطلب الآن</a>
+    </nav>
+</header>
+
+<section class="hero">
+  <div class="iphone-frame">
+    <h1>نحوّل فكرتك إلى مشروع متكامل</h1>
+    <p>برمجة • تصميم • تنفيذ مشاريع باحترافية</p>
+    <a href="services.html" class="hero-btn">ابدأ مشروعك</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>خدماتنا</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>برمجة مواقع</h3>
+      <p>تصميم وبرمجة مواقع احترافية</p>
+    </div>
+    <div class="card">
+      <h3>برمجة تطبيقات</h3>
+      <p>تطبيقات iOS و Android</p>
+    </div>
+    <div class="card">
+      <h3>حل مشاريع</h3>
+      <p>تنفيذ مشاريع أكاديمية وتقنية</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <h2>لماذا ProjectPro؟</h2>
+  <p>تنفيذ سريع، جودة عالية، دعم مستمر، تصميم فاخر</p>
+</section>
+
+<footer>
+  <a href="contact.html">التواصل</a>
+</footer>
+
+<script>
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+const navbarHeight = navbar.offsetHeight;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if(currentScroll > lastScroll && currentScroll > navbarHeight){
+        navbar.style.top = `-${navbarHeight}px`;
+        navbar.style.transition = 'top 0.4s ease';
+    } else {
+        navbar.style.top = '0';
+        navbar.style.transition = 'top 0.4s ease';
+    }
+    lastScroll = currentScroll;
+});
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
